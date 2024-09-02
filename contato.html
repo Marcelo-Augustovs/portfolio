@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfólio dev Marcelo Augusto</title>
+    <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="shortcut icon" href="_imagens/dev-icone.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="interface">
+
+        <!-- Menu principal de navegação do portifolio -->
+        <header id="cabecalho">
+            <hgroup>
+                <h1>Dev Marcelo Augusto</h1>
+                <h2>Programador Back-end</h2>
+            </hgroup>
+            
+            <img id="icone" src="_imagens/dev-icone.png" alt="foto de um dev codando">
+            
+            <nav id="menu">
+                <h1>Menu Principal</h1>
+                <ul>
+                     <li><a href="index.html" target="_self">Sobre mim</a></li>
+                     <li><a href="formacaoEExperiencia.html" target="_self">Formação e experiências</a></li>
+                     <li><a href="portfolio.html" target="_self">Portfólio</a></li>
+                     <li><a href="contato.html" target="_self" rel="next">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+     <!-- Configuração do formulario obs: não tem servidor back-end -->
+        <section id="corpo" class="formulario">
+            <div> 
+                <img src="_imagens/contato.png" alt="">
+                <p style="font-size: 18px;">Caso desejar envia-me uma mensagem</p>
+                
+                <form action="" method="">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </section>
+
+     <!-- conteudo do lado direito da pagina-->
+        <aside id="lateral">
+         <h1>Formas de Contato:</h1>
+            
+        
+        <!-- contato do email-->
+            <div class="img-texto">
+                <img style="margin-top: 2px;padding-right: -20; margin-left: 14px;"
+                src="/_imagens/icone-mensagem.png" alt="Logo da FAB">
+            
+            <p style=" margin-left: 1px;
+            padding-left: 30px;
+            max-width: 80%; 
+            text-align: center;"><br>marcelo.augustovs99@gmail.com</p>
+            </div>
+
+            
+        <!-- contato do linkedin/link para o mesmo-->
+            <div class="img-texto">
+                <img style="margin-top: 15px;padding-right: -20; margin-left: 19px; height: 75px; width: 100px;"
+                src="/_imagens/linkedin-icon.png" alt="Logo da FAB">
+            
+            <p 
+            style=" margin-left: 1px;
+            padding-left: 30px;
+            max-width: 10%; 
+            text-align: center;"><br>
+            
+            <a href="https://www.linkedin.com/in/devmarceloaugusto/" target="_blank">linkedin/in/devmarceloaugusto/</a>
+            </p>
+            </div>
+
+            
+        <!-- contato do whatsapp-->
+            <div class="img-texto">
+                <img style="margin-top: 17px;padding-right: -20; margin-left: 14px;"
+                src="/_imagens/whatsApp-icon.png" alt="whatsApp icone">
+            
+            <p style=" margin-left: 1px;
+            padding-left: 30px;
+            max-width: 80%; 
+            text-align: center;"><br>(21) 995900948</p>
+            </div>
+
+        </aside>
+        
+     <!-- utilizado para css-->
+     <footer id="rodape">
+     </footer>
+    </div>
+</body>
+</html>
