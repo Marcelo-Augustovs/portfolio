@@ -7,7 +7,7 @@
 /*configurações gerais das paginas */
 body{
     font: normal 18pt Arial;
-    background-color: #dddddd;
+    background-color: #55828B;
 }
 
 
@@ -19,15 +19,15 @@ div#interface {
     padding: 10px;
 }
 
-.interface {
-    position: relative; 
-    z-index: 1;
-  }
+    .interface {
+        position: relative; 
+        z-index: 1;
+    }
 
-p{
-    text-align: justify;
-    text-indent: 50px;
-}
+    p{
+        text-align: justify;
+        text-indent: 50px;
+    }
 
 /*Conteudo do menu de navegação */
 header#cabecalho img#icone{
@@ -37,28 +37,28 @@ header#cabecalho img#icone{
     width: 150px;
 }
 
-header#cabecalho{
-    border-bottom: 1px #606060 solid;
-    height: 165px;
-    margin-top: 80px;
-}
+    header#cabecalho{
+        border-bottom: 1px #606060 solid;
+        height: 165px;
+        margin-top: 80px;
+    }
 
-header#cabecalho h1{
-    font-family: 'Fontelogo', sans-serif;
-    font-size: 30pt;
-    color: #215b91;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0,0.7);
-    padding: 0px;
-    margin-bottom: 0px;
-}
+    header#cabecalho h1{
+        font-family: 'Fontelogo', sans-serif;
+        font-size: 30pt;
+        color: #215b91;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0,0.7);
+        padding: 0px;
+        margin-bottom: 0px;
+    }
 
-header#cabecalho h2{
-    font-size: 15pt;
-    font-family: 'Titillium Web', sans-serif;
-    color:#888888;
-    padding: 0px;
-    margin-top: 0px;
-}
+    header#cabecalho h2{
+        font-size: 15pt;
+        font-family: 'Titillium Web', sans-serif;
+        color:#CC9600;
+        padding: 0px;
+        margin-top: 0px;
+    }
 
 /*Conteudo das paginas */
 section#corpo {
@@ -67,106 +67,119 @@ section#corpo {
     width: 650px;
     border-right:1px solid #606060;
     padding-right: 15px;
-}
-
-section#corpo article h2{
-    background-color: #dddddd;
-    font-size: 17pt;
-    padding: 10px;
-    margin-top: 20px;
-}
-section#corpo h1{
-    font-family: 'fontelogo';
-    margin-bottom: -25px;
-    padding: 1px;
-    color: #606060;
-}
-section#corpo h3{
-    color: #cecece;
-    font-size: 15pt;
-    margin-bottom: -20px;
-    padding: 0px;
-}
-
-section#corpo h3 span{
-    display: block;
-    float: right;
-    color: #606060;
-    font-size: 15px;
-
-}
-/* formulario da pagina contato */
-section.formulario {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 430px;
-    margin-left: 100px;
-}
-
-section.formulario input,textarea{
-    width: 95%;
-    padding: 7px;
-    margin-top: 0px;
-    margin-bottom: -1px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-section.formulario img{
-    margin-left: 120px;
     
 }
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
+
+    section#corpo article h2{
+        background-color: #C0D4D8;
+        font-size: 17pt;
+        padding: 10px;
+        margin-top: 20px;
+        color: #3B6064;
+        font-style: italic; 
+    }
+    
+    section#corpo h3{
+        color: #8AC926;
+        font-size: 15pt;
+        padding: 0px;
+    }
+
+    section#corpo h3 span{
+        display: block;
+        float: right;
+        color: #606060;
+        font-size: 15px;
+
+    }
+
+    section#corpo p{
+      font-family: Georgia, serif;
+      font-size: 15pt;
+      font-style: italic;
+    }
+
+    section#corpo li{
+      font-family: Georgia, serif;
+      font-size: 15pt;
+    }
 
 /* conteudo do lado direito da pagina */
 aside#lateral{
     display: block;
     float: right;
-    width: 500px;
+    width: 42%;
+    margin-right: 1.6%;
 }
 
-aside#lateral h1{
-    background-color: #dddddd;
-    font-size: 17pt;
-    padding: 10px;
-    margin-top: 20px;
-}
+    aside#lateral h1{
+        background-color: #dddddd;
+        font-size: 17pt;
+        padding: 2%;
+        margin-top: 4%;
+        width: 100%;
+        
+    }
+     aside#lateral h3{
+        font-size: 17pt;
+        padding: 2%;
+        margin-left: 25%;
+        margin-top: 4%;
+    }
 
-aside#lateral img{
-   margin: -20px; 
-   width: 530px;
-}
+    aside#lateral p{
+        font-family: Times New Roman, serif;
+        font-size: 14pt;
+        margin-top: -3%;
+        padding-left: 40px;
+    }
 
-.img-texto{
-    display: inline-block;
-    vertical-align: top;
-    max-width: 100%;
-}
+     aside span{
+        display: block;
+        font-family: Times New Roman, serif;
+        font-size: 14pt;
+        margin-left: -11%;
+        margin-top: 1%;
+    }
 
-.img-texto img {
-    float: left;
-    margin-left: 60px;
-    margin-right: 0px; 
-    max-width: 20%;
-}
+    .destaque-centro{
+        text-align: center;
+        font-size: 16pt;
+        margin-left: -16%;
+        margin-bottom: -4%;
+    }
 
-.img-texto p{
-    display: inline-block;
-    margin-left: -10px;
-    max-width: 55%; 
-    text-align: center;
-}
+    aside#lateral li{
+        font-family: Times New Roman, serif;
+        font-style: italic;
+        font-size: 15pt;
+        margin-bottom: 10px;
+    }
+
+    aside#lateral img{
+    margin-left: 0%; 
+    width: 100%;
+    }
+
+    .img-texto{
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+    }
+
+    .img-texto img {
+        float: left;
+        margin-left: 60px;
+        margin-right: 0px; 
+        max-width: 20%;
+    }
+
+    .img-texto p{
+        display: inline-block;
+        margin-left: -10px;
+        max-width: 55%; 
+        text-align: center;
+    }
 
 
 
@@ -177,76 +190,80 @@ nav {
   }
   
 
-nav#menu ul{
-    list-style: none;
-    position: absolute;
-    top: -20px;
-    left: 620px;
-}
+    nav#menu ul{
+        list-style: none;
+        position: absolute;
+        top: -60%;
+        right: 9%;
+    }
 
-nav#menu li{
-    display: inline;
-    background-color: #dddddd;
-    padding: 3px;
-    margin: 2px;
-    transition: background-color 1s;
-}
+    nav#menu li{
+        display: inline;
+        background-color: #364958;
+        padding: 1%;
+        margin: 0.5%;
+        transition: background-color 1s;
+    }
 
-nav#menu li:hover{
-    background-color: #606060;
-}
+    nav#menu li:hover{
+        background-color: #FFCA3A;
+    }
 
-nav#menu a{
-    color: black;
-    text-decoration: none;
-    transition: color 0.5s;
-}
+    nav#menu a{
+        color: black;
+        text-decoration: none;
+        transition: color 0.5s;
+    }
 
-nav#menu a:hover{
-    color: white;
-    text-decoration: underline;
-}
+    nav#menu a:hover{
+        color: white;
+        text-decoration: underline;
+    }
 
-nav#menu h1{
-    display: none;
-}
+    nav#menu h1{
+        display: none;
+    }
 
-nav#menu {
+    nav#menu {
     display: flex;
     justify-content: center;
-    background-color: #222;
+    background-color: #222; 
     padding: 17px;
-    flex-wrap: wrap; /* Torna o menu flexível para telas menores */
-  }
-  
-  nav#menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2rem;
-    transition: color 0.3s, border-bottom 0.3s;
-    padding: 5px;
-    border-bottom: 2px solid transparent;
-  }
-  
-  nav#menu a:hover,
-  nav#menu a.active-link {
-    color: #66ccff;
-    border-bottom: 2px solid #66ccff;
-  }
-  
-  /* Responsividade para telas menores */
-  @media (max-width: 768px) {
-    nav#menu {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    nav#menu a {
-      margin: 10px 0;
-      font-size: 1.1rem;
-    }
+    flex-wrap: wrap;
+    width: 84%;         
+    margin: 0 auto;        /* centraliza */
+    border-radius: 4px;    /* opcional: arredonda cantos */
 }
+
+    
+    nav#menu a {
+        color: white;
+        text-decoration: none;
+        margin: 15px;
+        font-size: 1.2rem;
+        transition: color 0.3s, border-bottom 0.3s;
+        padding: 5px;
+        border-bottom: 2px solid transparent;
+    }
+    
+    nav#menu a:hover,
+    nav#menu a.active-link {
+        color: #66ccff;
+        border-bottom: 2px solid #66ccff;
+    }
+    
+    /* Responsividade para telas menores */
+    @media (max-width: 768px) {
+        nav#menu {
+        flex-direction: column;
+        align-items: center;
+        }
+    
+        nav#menu a {
+        margin: 10px 0;
+        font-size: 1.1rem;
+        }
+    }
 
 footer#rodape{
     clear: both;
