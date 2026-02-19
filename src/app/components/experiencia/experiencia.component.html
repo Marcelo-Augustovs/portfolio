@@ -6,7 +6,7 @@
          <h2>Projetos</h2>
         <article>
     
-            <div class="display-projetos">
+           <!--> <div class="display-projetos">
                 <ul *ngFor="let projeto of projetos; let i = index" 
                 [attr.projeto-selecionado] = "i === projetoSelecionado ? true : null">
                     <li>
@@ -17,12 +17,13 @@
                         <a [href]="projeto.link" target="_blank">Preview</a>
                     </li>
                 </ul>
-            </div>
+            </div> 
             
             <button class="button-left" (click)="projetoAnterior()">🡸</button>
             <button class="button-right" (click)="proximoProjeto()">🡺</button>  
-
-        </article>
+                    -->
+            <app-videoContainer></app-videoContainer>
+        </article> 
      </section>
 
     <!-- lado direito do conteudo/experiencias-->

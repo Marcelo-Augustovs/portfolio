@@ -43,6 +43,7 @@ h2 {
 
 .display-projetos h3 {
     text-align: center;
+    color: white;
 }
 
 
@@ -60,11 +61,10 @@ h2 {
 
 /* Ao passar o mouse apenas sobre o parágrafo */
 .descricao:hover {
-  transform: translateY(-40px); /* sobe sem empurrar nada */
+  transform: translateY(-18px); /* sobe sem empurrar nada */
   max-height: 200px; /* aumenta o espaço para leitura */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
-
 
 
 .button-right {

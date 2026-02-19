@@ -1,15 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { VideoContainerComponent } from "../video-container/videoContainer.component";
 
 @Component({
   selector: 'app-experiencia',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, VideoContainerComponent],
   templateUrl: './experiencia.component.html',
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent {
-   projetos = [
+   /*projetos = [
     {
       nome: 'Simple Adventure (Game-Demo)',
       img: 'assets/_imagens/especificacoes-02.png',
@@ -58,5 +59,5 @@ export class ExperienciaComponent {
   projetoAnterior() {
     this.projetoSelecionado = 
       (this.projetoSelecionado - 1 + this.projetos.length) % this.projetos.length;
-  }
+  } */
 }
