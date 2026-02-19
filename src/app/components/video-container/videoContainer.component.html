@@ -1,0 +1,35 @@
+<div class="project-card">
+
+  <!-- VIDEO -->
+  <div class="video-container">
+    <video #videoPlayer muted loop>
+      <source [src]="projetoAtual.video" type="video/mp4">
+    </video>
+
+    <div class="video-overlay" (click)="toggleVideo(videoPlayer)">
+      <div class="play-button">▶</div>
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div class="project-content">
+    <h3>{{ projetoAtual.titulo }}</h3>
+
+    <p class="tech">{{ projetoAtual.tech }}</p>
+
+    <p class="description">
+      {{ projetoAtual.descricao }}
+    </p>
+
+    <div class="buttons">
+      <a class="btn preview" [href]="projetoAtual.previewLink">Preview</a>
+      <a class="btn github" [href]="projetoAtual.githubLink">Github</a>
+    </div>
+  </div>
+
+  <!-- BOTÃO DIREITA -->
+  <button class="nav-btn right" (click)="proximoProjeto()">❯</button>
+  <!-- BOTÃO ESQUERDA -->
+  <button class="nav-btn left" (click)="projetoAnterior()">❮</button>
+
+</div>
