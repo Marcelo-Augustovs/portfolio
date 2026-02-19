@@ -1,75 +1,51 @@
 <div id="interface">
     
      <!-- Descrição Sobre a formação -->
-     <section id="corpo">
+     <section id="corpo" class="card-3d">
 
          <h2>Projetos</h2>
         <article>
-    
-           <!--> <div class="display-projetos">
-                <ul *ngFor="let projeto of projetos; let i = index" 
-                [attr.projeto-selecionado] = "i === projetoSelecionado ? true : null">
-                    <li>
-                        <h3>{{ projeto.nome }}</h3>
-                        <img [src]="projeto.img" alt="">
-                        <p>{{ projeto.descricao }}</p>
-                        <p class="descricao">{{ projeto.descricao2 }}</p>
-                        <a [href]="projeto.link" target="_blank">Preview</a>
-                    </li>
-                </ul>
-            </div> 
-            
-            <button class="button-left" (click)="projetoAnterior()">🡸</button>
-            <button class="button-right" (click)="proximoProjeto()">🡺</button>  
-                    -->
+
             <app-videoContainer></app-videoContainer>
+
+
         </article> 
      </section>
 
     <!-- lado direito do conteudo/experiencias-->
-     <aside id="lateral">
-        <h1>Experiências</h1>
-        
-        <div class="display-experiencia">
-            
-            <div class="img-texto">
-                <img style="margin-top: 2px;padding-right: -20; margin-left: 14px;"
-                src="assets/_imagens/FAB.jpg" alt="Logo da FAB">
-            
-            <h3>FAB( Força Aérea Brasileira ) BAGL/GSD-GL - 4 anos.</h3>
+     <aside id="lateral" class="card-3d">
+        <h1 class="titulo-experiencia">Experiências</h1>
+
+        <div class="exp-card">
+
+            <div class="exp-header">
+            <img src="assets/_imagens/FAB.jpg" alt="Logo FAB">
+
+            <div class="exp-title">
+                <h3>Força Aérea Brasileira</h3>
+                <h4>Setor Administrativo • EFM/GSD-GL</h4>
+                <span class="exp-periodo">Duração: 2018 — 2022 • 4 anos</span>
+            </div>
             </div>
 
-            <p >
-                Responsável pela parte Administrativa do setor de Recrutamento.
-                
-                <span> Duração: 2018 - 2022.</span>
-                <span class="destaque-centro"> Atividades: </span>                          
+            <p class="exp-desc">
+            Responsável pela área administrativa do setor de recrutamento,
+            apoiando processos internos e gestão de militares.
             </p>
-                <ul>
-                        <li>
-                            Rotinas administrativas e de departamento pessoal de 250 à 350 militares sob
-                                responsabilidade semestralmente;
-                        </li>
-                        <li>
-                            Realizar a iniciação na carreira dos militares;
-                        </li>    
-                        <li>   
-                            Responsável por dados pessoais, auxílios, transgressões e escalas;
-                        </li>     
-                        
-                        <li>
-                            Auxiliar nas instruções: ordem unida, hinos e canções, regulamento e instituto militar;
-                        </li> 
-                        <li>   
-                            Controle e registro médico dos novos militares;
-                        </li> 
-                        <li>  
-                            Protocolar e registrar à entrada e saída de matérias e as ordem de missão
-                        </li>
-                    </ul>
-                </div>
+
+           <!-- <h1>Atividades:</h1> -->
+
+            <ul class="exp-list">
+            <li>Gestão administrativa de 250–350 militares por semestre</li>
+            <li>Processo de iniciação de novos militares</li>
+            <li>Controle de dados pessoais, auxílios, transgressões e escalas</li>
+            <li>Apoio em instruções militares e regulamentos</li>
+            <li>Registro médico de novos militares</li>
+            <li>Controle de entrada/saída de materiais e ordens de missão</li>
+            </ul>
+
+        </div>
     </aside>
-       
      <!-- utilizado para css-->
      <footer id="rodape">
      </footer>
