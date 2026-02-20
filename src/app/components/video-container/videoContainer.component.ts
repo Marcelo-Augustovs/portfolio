@@ -1,79 +1,58 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-videoContainer',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './videoContainer.component.html',
-  styleUrl: './videoContainer.component.css'
+  styleUrls: ['./videoContainer.component.css']
 })
-export class VideoContainerComponent {
+export class VideoContainerComponent implements OnChanges {
 
-  toggleVideo(video: HTMLVideoElement) {
-  if (video.paused) {
-    video.play();
-  } else {
-    video.pause();
+  @Input({ required: true }) projectName!: string;
+  @Input({ required: true }) techUsed!: string;
+  @Input({ required: true }) projectDescription!: string;
+  @Input({ required: true, alias: 'preview' }) previewLink!: string;
+  @Input({ required: true, alias: 'github' }) githubLink!: string;
+
+  @Output() next = new EventEmitter<void>();
+  @Output() previous = new EventEmitter<void>();
+
+  safePreviewUrl!: SafeResourceUrl;
+  thumbnailUrl!: string;
+  videoLoaded = false;
+
+  constructor(private sanitizer: DomSanitizer) {}
+
+  ngOnChanges() {
+    const videoId = this.getVideoId(this.previewLink);
+
+    this.thumbnailUrl = `https://img.youtube.com/vi/${videoId}/sddefault.jpg`;
+
+    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    this.safePreviewUrl =
+      this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+
+    this.videoLoaded = false;
   }
-}
 
-
-projetos: Projeto[] = [
-  {
-    titulo: 'Simple Adventure (Game-Demo)',
-    tech: 'Python • Pygame',
-    descricao: 'Demo de jogo 2D desenvolvido com foco em arquitetura limpa, escalabilidade e organização de código.',
-    video: 'assets/videos/game.mp4',
-    previewLink: '#',
-    githubLink: '#'
-  },
-  {
-    titulo: 'MaNotes API',
-    tech: 'Java • Spring Boot • JWT',
-    descricao: 'API REST completa com autenticação JWT, controle financeiro, anotações e eventos.',
-    video: 'assets/videos/manotes.mp4',
-    previewLink: '#',
-    githubLink: '#'
-  },
-  {
-    titulo: 'Sistema de Doações',
-    tech: 'Java • MySQL • Hibernate',
-    descricao: 'Sistema para cadastro de famílias, voluntários e controle de doações.',
-    video: 'assets/videos/doacoes.mp4',
-    previewLink: '#',
-    githubLink: '#'
+  getVideoId(url: string): string {
+    const regExp = /v=([^&]+)/;
+    const match = url.match(regExp);
+    return match ? match[1] : '';
   }
-];
 
-indiceProjetoAtual = 0;
-
-proximoProjeto() {
-  if (this.indiceProjetoAtual < this.projetos.length - 1) {
-    this.indiceProjetoAtual++;
-  } else {
-    this.indiceProjetoAtual = 0;
+  loadVideo() {
+    this.videoLoaded = true;
   }
-}
 
-projetoAnterior() {
-  if (this.indiceProjetoAtual > 0) {
-    this.indiceProjetoAtual--;
-  } else {
-    this.indiceProjetoAtual = this.projetos.length - 1;
+  proximoProjeto() {
+    this.next.emit();
   }
-}
 
-get projetoAtual() {
-  return this.projetos[this.indiceProjetoAtual];
-}
-
-
-}
-
-interface Projeto {
-  titulo: string;
-  tech: string;
-  descricao: string;
-  video: string;
-  previewLink: string;
-  githubLink: string;
+  projetoAnterior() {
+    this.previous.emit();
+  }
 }

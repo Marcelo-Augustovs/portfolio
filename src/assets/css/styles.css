@@ -16,11 +16,12 @@ body{
 
 div#interface {
     background-color: white;
-    width: 88.5%;
-    margin-left: 5%;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1270px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0,0.6);
-    padding: 10px;
     display: flex;
+    gap: 5px;
 }
 
     .interface {
@@ -46,11 +47,8 @@ div#interface {
 }
 
 section#corpo {
-    display: inline-block;
-    width: 50%;
+    flex:1;
     border-right:1px solid #606060;
-    padding-right: 15px;
-    
 }
 
     section#corpo article h2{
@@ -85,9 +83,7 @@ section#corpo {
 
 /* conteudo do lado direito da pagina */
 aside#lateral{
-    display: block;
-    width: 50%;
-    padding-left: 20px;
+    flex: 1;
 }
 
     aside#lateral h1{
@@ -145,50 +141,123 @@ aside#lateral{
         text-align: center;
     }
 
-
-
-/*Menu de navegação*/
-
-
-    nav#menu a:hover{
-        color: white;
-        text-decoration: underline;
-    }
-
-    nav#menu h1{
-        display: none;
-    }
-
-    nav#menu a {
-        color: white;
-        text-decoration: none;
-        margin: 15px;
-        font-size: 1.2rem;
-        transition: color 0.3s, border-bottom 0.3s;
-        padding: 5px;
-        border-bottom: 2px solid transparent;
-    }d
-    
-    nav#menu a:hover,
-    nav#menu a.active-link {
-        color: #66ccff;
-        border-bottom: 2px solid #66ccff;
-    }
-    
-    /* Responsividade para telas menores */
-    @media (max-width: 768px) {
-        nav#menu {
-        flex-direction: column;
-        align-items: center;
-        }
-    
-        nav#menu a {
-        margin: 10px 0;
-        font-size: 1.1rem;
-        }
-    }
-
 footer#rodape{
     clear: both;
     border-top: 1px solid #606060;
 }
+
+/* ============================= */
+/* TABLET / NOTEBOOK PEQUENO */
+/* ============================= */
+@media (max-width: 992px){
+
+    div#interface{
+        width: 88%;
+        margin: auto;
+        flex-direction: column; /* empilha */
+    }
+
+    section#corpo{
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    aside#lateral{
+        width: 100%;
+        padding-left: 0;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    body{
+        font-size: 14pt;
+        background-position: center;
+    }
+
+    h1{
+        font-size: 28px;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 18px;
+        text-align: center;
+    }
+
+    article{
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .header-top{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    #perfil-image img{
+        width: 90px;
+    }
+
+    #menu ul{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .display-projetos{
+        height: auto;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .exp-card{
+        padding: 20px;
+    }
+
+    .exp-header{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .exp-header img{
+        width: 70px;
+        height: 70px;
+    }
+
+    .exp-title h3{
+        font-size: 20px;
+    }
+
+    .exp-title h4{
+        font-size: 16px;
+    }
+
+    .exp-desc{
+        font-size: 16px;
+        text-align: center;
+    }
+
+
+@media (max-width: 576px){
+
+    body{
+        font-size: 13pt;
+    }
+
+   
+    .exp-list li{
+        font-size: 14px;
+    }
+
+    nav#menu a{
+        font-size: 1rem;
+    }
+
+}
+}
+

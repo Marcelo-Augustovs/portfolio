@@ -1,16 +1,19 @@
 <div id="interface">
     
-     <!-- Descrição Sobre a formação -->
-     <section id="corpo" class="card-3d">
-
-         <h2>Projetos</h2>
-        <article>
-
-            <app-videoContainer></app-videoContainer>
-
-
-        </article> 
-     </section>
+    <section id="corpo" class="card-3d">
+        <h2>Projetos</h2>
+        <article *ngIf="projectList.length > 0">
+            <app-videoContainer
+                [projectName]="projectList[currentIndex].name"
+                [techUsed]="projectList[currentIndex].techs"
+                [projectDescription]="projectList[currentIndex].description"
+                [preview]="projectList[currentIndex].previewLink"
+                [github]="projectList[currentIndex].githubLink"
+                (next)="proximoProjeto()"
+                (previous)="projetoAnterior()"
+            ></app-videoContainer>
+        </article>
+    </section>
 
     <!-- lado direito do conteudo/experiencias-->
      <aside id="lateral" class="card-3d">

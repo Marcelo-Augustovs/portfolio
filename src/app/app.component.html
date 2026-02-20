@@ -1,19 +1,30 @@
 <header id="cabecalho">
-  <nav id="menu">
-    <ul>
-      <li><a routerLink="/" routerLinkActive="active" >Home</a></li>
-      <li><a routerLink="/experiencia" routerLinkActive="active">Experiência</a></li>
-      <li><a routerLink="/contato" routerLinkActive="active">Contato</a></li>
-    </ul>
-  </nav>
-        <div id="perfil-image">
-          <img src="assets/_imagens/dev-marcelo-icone.webp" alt="foto de um dev codando">
-        </div>
-        <hgroup>
-            <h1>Marcelo Augusto</h1>
-            <h2>Desenvolvedor e Analista de Sistemas</h2>
-        </hgroup>
-        
-</header>   
 
-<router-outlet></router-outlet>
+  <nav id="menu">
+       <div class="menu-toggle" (click)="toggleMenu()">☰</div>
+
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/experiencia" routerLinkActive="active">Experiência</a></li>
+        <li><a routerLink="/contato" routerLinkActive="active">Contato</a></li>
+      </ul>
+  </nav>
+  <div class="header-top">
+      <hgroup>
+          <h1>Marcelo Augusto</h1>
+          <h2>Desenvolvedor e Analista de Sistemas</h2>
+      </hgroup>
+
+      <div id="perfil-image">
+          <img src="assets/_imagens/dev-marcelo-icone.webp">
+      </div>
+  </div>
+
+</header>
+
+<!-- CONTAINER PRINCIPAL DO SITE -->
+<div id="interface">
+    <router-outlet></router-outlet>
+</div>
+
+
