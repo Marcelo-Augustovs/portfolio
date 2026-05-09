@@ -1,92 +1,350 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 .tech-container {
   position: absolute;
-  inset: 0;                 /* ocupa todo o aside */
-  display: flex;
-  justify-content: center;
-  margin-top: 3%;
-  align-items: center;
-  z-index: 2;
-}
-
-.tech-container .icons {
-  width: 70%;               /* controla área dentro do tablet */
-  height: 60%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  justify-items: center;
-  align-items: center;
-  
-
-  & img{
-    width: 95%;
-    cursor: pointer;
-  }
-}
-
-:host {
-  width: 100%;
-  height: 100%;
-}
-
-.icons-grid {
-  width: 100%;
-  height: 100%;
-  display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-  gap: clamp(10px, 2vw, 24px);
-
-  justify-items: center;
-  align-items: center;
-}
-
-.icons-grid img {
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-.icons-grid img:hover {
-  transform: scale(1.08);
-}
-
-
-
-.tech-modal {
-  position: fixed;
   inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 2;
+  margin-top: -8%;
+  /* Restaurado o alinhamento óptico vertical */
 }
 
-.modal-content {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  width: 350px;
-  text-align: center;
-  animation: fadeIn 0.3s ease;
+.tech-container .icons {
+  width: 62%;
+  /* Restaurado o tamanho perfeito para ficar entre as mãos */
+  height: 60%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  /* Restaurado o gap original no desktop */
+  justify-items: center;
+  align-items: center;
 }
 
-.modal-content h2 {
-  margin-bottom: 10px;
-}
-
-.modal-content button {
-  margin-top: 15px;
-  padding: 8px 16px;
-  border: none;
-  background: #1e40af;
-  color: #fff;
-  border-radius: 6px;
+.tech-container .icons img {
+  width: 95%;
+  /* Restaurado a largura relativa sem max-width fixo */
+  min-width: 0;
+  /* Garante que possam encolher em telas pequenas */
+  height: auto;
+  object-fit: contain;
   cursor: pointer;
-
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+  animation: pulseIcon 3s infinite ease-in-out alternate;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+.tech-container .icons img:nth-child(even) {
+  animation-delay: 0.5s;
+}
+
+.tech-container .icons img:nth-child(3n) {
+  animation-delay: 1s;
+}
+
+@keyframes pulseIcon {
+  0% { transform: scale(1) translateY(0); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+  100% { transform: scale(1.05) translateY(-3px); filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4)); }
+}
+
+.tech-container .icons img:hover {
+  animation: none;
+  transform: scale(1.15) translateY(-5px);
+  filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.5)) brightness(1.1);
+}
+
+.tech-container .icons img:active {
+  transform: scale(0.95);
+}
+
+.tech-modal {
+  width: 72%;
+  /* Mesma largura dos ícones para o modal ficar no mesmo lugar */
+  height: 60%;
+  margin-left: 26px;
+
+  display: flex;
+
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  animation: modalEnter 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tech-sidebar {
+  width: 25%;
+  min-width: 20px;
+
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px;
+  gap: 10px;
+}
+
+.tech-sidebar img {
+  width: 70%;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+.tech-sidebar h3 {
+  color: white;
+  text-align: center;
+  font-size: clamp(0.05rem, 1.2vw, 1rem);
+  font-weight: 600;
+  margin: 0;
+  word-break: break-word;
+}
+
+.tech-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+  color: white;
+  position: relative;
+  min-width: 0;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.content-header h2 {
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(90deg, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.close-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.close-btn:hover {
+  background: rgba(239, 68, 68, 0.8);
+  transform: rotate(90deg);
+}
+
+.content-body {
+  overflow-y: auto;
+
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  color: #cbd5e1;
+  padding-right: 5px;
+}
+
+/* Custom Scrollbar */
+.content-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.content-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+}
+
+.content-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.content-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .tech-container .icons {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-container .icons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    transform: scale(0.85);
+    /* Mantém o tamanho exato que você gostou */
+    width: 70%;
+    /* Ajuste fino do container para caber no tablet */
+    height: 65%;
+  }
+
+  .tech-container .icons img {
+    max-width: 35px;
+    /* Ícones bem menores para não vazar a tela do tablet no mobile */
+  }
+
+  /* Modal solto do tablet para leitura confortável no mobile */
+  .tech-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 80vh;
+    margin-left: 0;
+    /* Anula a margem do desktop */
+    z-index: 9999;
+    flex-direction: column;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.75), 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: modalEnterMobile 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  @keyframes modalEnterMobile {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -45%) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .tech-sidebar {
+    width: 100%;
+    height: auto;
+    min-height: 80px;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px;
+  }
+
+  .tech-sidebar img {
+    width: 50px;
+    margin-right: 15px;
+  }
+
+  .tech-sidebar h3 {
+    margin: 0;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+
+  .tech-content {
+    padding: 20px;
+  }
+
+  .content-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .content-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .close-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .content-body {
+    font-size: 1.05rem;
+    /* Fonte grande e legível */
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-container .icons {
+    gap: 5px;
+    width: 75%;
+  }
+
+  .tech-container .icons img {
+    max-width: 31px;
+    /* Redução drástica para não vazar no celular */
+  }
+
+  .tech-modal {
+    width: 95vw;
+    height: 85vh;
+  }
+
+  .tech-sidebar {
+    padding: 12px;
+  }
+
+  .tech-sidebar img {
+    width: 40px;
+  }
+
+  .content-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .content-body {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 }

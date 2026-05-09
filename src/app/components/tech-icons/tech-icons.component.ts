@@ -15,53 +15,64 @@ export class TechIconsComponent {
   techDescriptions: any = {
     angular: {
       name: 'Angular',
+      icon: 'assets/_imagens/Angular-Dark.svg',
       description: 'Framework front-end baseado em TypeScript para construção de SPAs robustas e escaláveis.'
     },
     java: {
       name: 'Java',
+      icon: 'assets/_imagens/Java.svg',
       description: 'Linguagem orientada a objetos amplamente utilizada no back-end e aplicações corporativas.'
     },
     typescript: {
       name: 'TypeScript',
-      description: 'Superset do JavaScript com tipagem estática.'
+      icon: 'assets/_imagens/TypeScript.svg',
+      description: 'Superset do JavaScript com tipagem estática, garantindo código mais seguro e escalável.'
     },
     javascript: {
       name: 'JavaScript',
-      description: 'Linguagem base da web para interatividade.'
+      icon: 'assets/_imagens/JavaScript.svg',
+      description: 'Linguagem base da web, essencial para criar interatividade e dinamismo nas páginas.'
     },
-     mysql: {
+    mysql: {
       name: 'MySQL',
-      description: 'Sistema de gerenciamento de banco de dados relacional (RDBMS) amplamente utilizado em aplicações web. Utiliza SQL para manipulação de dados e é conhecido por desempenho, confiabilidade e integração com back-end.'
+      icon: 'assets/_imagens/MySQL-Light.svg',
+      description: 'Sistema de gerenciamento de banco de dados relacional (RDBMS) amplamente utilizado, conhecido por seu alto desempenho e confiabilidade.'
     },
     spring: {
       name: 'Spring',
-      description: 'Framework robusto para desenvolvimento de aplicações Java no back-end. Facilita a criação de APIs REST, integração com bancos de dados e aplicações escaláveis utilizando Spring Boot, injeção de dependência e arquitetura modular.'
+      icon: 'assets/_imagens/Spring-Light.svg',
+      description: 'Framework robusto para desenvolvimento de aplicações Java no back-end. Facilita a criação de APIs REST e arquiteturas de microsserviços.'
     },
-     css: {
-      name: 'css',
-      description: 'Linguagem de estilização responsável pelo design e layout de páginas web. Permite controle de cores, tipografia, responsividade, animações e posicionamento de elementos.'
+    nextjs: {
+      name: 'Next.js',
+      icon: 'assets/_imagens/NextJS-Light.svg',
+      description: 'Framework React focado em renderização híbrida (SSR e SSG), otimização de SEO e excelente performance de carregamento.'
     },
-    html: {
-      name: 'HTML',
-      description: 'Linguagem de marcação utilizada para estruturar páginas web. Define a organização semântica do conteúdo como títulos, parágrafos, imagens, links e formulários.'
+    nestjs: {
+      name: 'NestJS',
+      icon: 'assets/_imagens/NestJS-Light.svg',
+      description: 'Framework Node.js progressivo para a construção de aplicações back-end eficientes e escaláveis, utilizando arquitetura modular e TypeScript.'
     },
     python: {
       name: 'Python',
-      description: 'Linguagem de programação versátil e de sintaxe simples, utilizada em automação, back-end, análise de dados e scripts. Destaca-se pela legibilidade e ampla comunidade.'
+      icon: 'assets/_imagens/Python-Dark.svg',
+      description: 'Linguagem de programação versátil e de sintaxe clara, destacando-se em áreas como inteligência artificial, automação e análise de dados.'
     },
     docker: {
       name: 'Docker',
-      description: 'Plataforma de containerização que permite empacotar aplicações e suas dependências em containers isolados, garantindo consistência entre ambientes de desenvolvimento, teste e produção.'
+      icon: 'assets/_imagens/Docker.svg',
+      description: 'Plataforma de containerização que empacota aplicações e suas dependências em containers isolados, unificando ambientes de desenvolvimento e produção.'
     },
-     kubernetes: {
-      name: 'kubernetes',
-      description: 'Sistema de orquestração de containers que automatiza implantação, escalabilidade e gerenciamento de aplicações em containers, especialmente em ambientes de cloud.'
+    kubernetes: {
+      name: 'Kubernetes',
+      icon: 'assets/_imagens/Kubernetes.svg',
+      description: 'Sistema de orquestração de containers que automatiza a implantação, escalabilidade e gerenciamento de aplicações complexas e baseadas em microsserviços.'
     },
-     git: {
-      name: 'Git',
-      description: 'Sistema de controle de versão distribuído utilizado para rastrear alterações em código-fonte, facilitar colaboração em equipe e gerenciar versões de projetos.'
+    azure: {
+      name: 'Azure',
+      icon: 'assets/_imagens/Azure-Dark.svg',
+      description: 'Plataforma de computação em nuvem da Microsoft, oferecendo diversos serviços para construir, implantar e gerenciar aplicações escaláveis.'
     }
-    
   };
 
   openTech(key: string) {

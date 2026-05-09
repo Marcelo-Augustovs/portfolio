@@ -1,60 +1,38 @@
 <div class="tech-container">
-         <div class="icons">
-            <img src="assets/_imagens/Angular-Dark.svg"
-               (click)="openTech('angular')"
-               alt="Angular">
+      <div class="icons" *ngIf="!selectedTech">
+            <img src="assets/_imagens/Angular-Dark.svg" (click)="openTech('angular')" alt="Angular">
+            <img src="assets/_imagens/Java.svg" (click)="openTech('java')" alt="Java">
+            <img src="assets/_imagens/TypeScript.svg" (click)="openTech('typescript')" alt="TypeScript">
+            <img src="assets/_imagens/JavaScript.svg" (click)="openTech('javascript')" alt="javaScript">
+            <img src="assets/_imagens/MySQL-Light.svg" (click)="openTech('mysql')" alt="mySQL">
+            <img src="assets/_imagens/Spring-Light.svg" (click)="openTech('spring')" alt="Spring">
+            <img src="assets/_imagens/NextJS-Light.svg" (click)="openTech('nextjs')" alt="NextJS">
+            <img src="assets/_imagens/NestJS-Light.svg" (click)="openTech('nestjs')" alt="NestJS">
+            <img src="assets/_imagens/Python-Dark.svg" (click)="openTech('python')" alt="Python">
+            <img src="assets/_imagens/Docker.svg" (click)="openTech('docker')" alt="Docker">
+            <img src="assets/_imagens/Kubernetes.svg" (click)="openTech('kubernetes')" alt="Kubernetes">
+            <img src="assets/_imagens/Azure-Dark.svg" (click)="openTech('azure')" alt="Azure">
+      </div>
+      <div class="tech-modal" *ngIf="selectedTech">
 
-            <img src="assets/_imagens/Java.svg"
-                  (click)="openTech('java')"
-                  alt="Java">
+            <aside class="tech-sidebar">
+                  <img [src]="selectedTech.icon" alt="">
+                  <h3>{{ selectedTech.name }}</h3>
+            </aside>
 
-            <img src="assets/_imagens/TypeScript.svg" 
-                  (click)="openTech('typescript')"
-                  alt="TypeScript">
+            <section class="tech-content">
+                  <div class="content-header">
+                        <h2>{{ selectedTech.name }}</h2>
 
-            <img src="assets/_imagens/JavaScript.svg"
-                  (click)="openTech('javascript')"
-                  alt="javaScript">
+                        <button class="close-btn" (click)="closeModal()">
+                              ✕
+                        </button>
+                  </div>
 
-            <img src="assets/_imagens/MySQL-Light.svg" 
-                  (click)="openTech('mysql')"
-                  alt="mySQL">
+                  <div class="content-body">
+                        <p>{{ selectedTech.description }}</p>
+                  </div>
+            </section>
 
-            <img src="assets/_imagens/Spring-Light.svg" 
-                  (click)="openTech('spring')"
-                  alt="Spring">
-
-            <img src="assets/_imagens/CSS.svg"
-                  (click)="openTech('css')"
-                  alt="Css">
-
-
-            <img src="assets/_imagens/HTML.svg" 
-                  (click)="openTech('html')"
-                  alt="HTML">
-
-            <img src="assets/_imagens/Python-Dark.svg"
-                  (click)="openTech('python')"
-                  alt="Python">
-
-            <img src="assets/_imagens/Docker.svg"
-                  (click)="openTech('docker')"
-                  alt="Docker">
-
-            <img src="assets/_imagens/Kubernetes.svg"
-                  (click)="openTech('kubernetes')"
-                  alt="Kubernetes">
-
-            <img src="assets/_imagens/Git.svg"
-                  (click)="openTech('git')"
-                  alt="Git">
-         </div>
-</div>
-
-<div class="tech-modal" *ngIf="selectedTech">
-  <div class="modal-content">
-    <h2>{{ selectedTech.name }}</h2>
-    <p>{{ selectedTech.description }}</p>
-    <button (click)="closeModal()">Fechar</button>
-  </div>
+      </div>
 </div>
