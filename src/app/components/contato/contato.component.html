@@ -1,36 +1,66 @@
-<div id="interface">
-
-     <h4>Formas de Contato:</h4>
-    
-    <!-- contato do email-->
-        <div class="img-texto">
-            <img style="margin-top: 2px;padding-right: -20; margin-left: 14px;"
-            src="assets/_imagens/icone-mensagem.png" alt="Logo da FAB">
+<div class="contato-container">
+    <div class="contato-content">
         
-        <p style=" margin-left: 1px;
-        padding-left: 30px;
-        max-width: 80%; 
-        text-align: center;"><br>marcelo.augustovs99&#64;gmail.com</p>
+        <div class="info-section">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="subtitle">Sinta-se à vontade para me mandar uma mensagem para conversarmos sobre oportunidades, projetos ou tecnologia.</p>
+
+            <mat-card class="contact-info-card" appearance="outlined">
+                <mat-card-content>
+                    <div class="contact-item">
+                        <mat-icon color="primary">email</mat-icon>
+                        <div class="contact-text">
+                            <strong>Email</strong>
+                            <span>marcelo.augustovs99&#64;gmail.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <img src="assets/_imagens/linkedin-icon.png" alt="LinkedIn" class="social-icon">
+                        <div class="contact-text">
+                            <strong>LinkedIn</strong>
+                            <a href="https://www.linkedin.com/in/devmarceloaugusto/" target="_blank">/in/devmarceloaugusto/</a>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
         </div>
 
-        
-    <!-- contato do linkedin/link para o mesmo-->
-        <div class="img-texto">
-            <img style="margin-top: 15px;padding-right: -20; margin-left: 19px; height: 75px; width: 100px;"
-            src="assets/_imagens/linkedin-icon.png" alt="Logo da FAB">
-        
-        <p 
-        style=" margin-left: 1px;
-        padding-left: 30px;
-        max-width: 10%; 
-        text-align: center;"><br>
-        
-        <a href="https://www.linkedin.com/in/devmarceloaugusto/" target="_blank">linkedin/in/devmarceloaugusto/</a>
-        </p>
+        <div class="form-section">
+            <mat-card class="form-card" appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>Mande uma Mensagem</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <form [formGroup]="contatoForm" (ngSubmit)="enviarMensagem()" class="contact-form">
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Nome Completo</mat-label>
+                            <input matInput formControlName="nome" placeholder="Seu nome">
+                            <mat-icon matSuffix>person</mat-icon>
+                            <mat-error *ngIf="contatoForm.get('nome')?.hasError('required')">Nome é obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="email" placeholder="seu.email@exemplo.com" type="email">
+                            <mat-icon matSuffix>email</mat-icon>
+                            <mat-error *ngIf="contatoForm.get('email')?.hasError('required')">Email é obrigatório</mat-error>
+                            <mat-error *ngIf="contatoForm.get('email')?.hasError('email')">Email inválido</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Mensagem</mat-label>
+                            <textarea matInput formControlName="mensagem" placeholder="Sua mensagem..." rows="5"></textarea>
+                            <mat-error *ngIf="contatoForm.get('mensagem')?.hasError('required')">Mensagem é obrigatória</mat-error>
+                        </mat-form-field>
+
+                        <button mat-raised-button color="primary" type="submit" [disabled]="contatoForm.invalid" class="submit-btn">
+                            <mat-icon>send</mat-icon> Enviar Mensagem
+                        </button>
+                    </form>
+                </mat-card-content>
+            </mat-card>
         </div>
 
-    
- <!-- utilizado para css-->
- <footer id="rodape">
- </footer>
+    </div>
 </div>

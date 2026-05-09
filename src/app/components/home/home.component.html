@@ -1,54 +1,38 @@
-<div id="interface">
+<div class="home-wrapper">
+   <section id="corpo">
+      <article class="formacao-article">
+         <h2>Formação Academica</h2>
 
-<section id="corpo" class="card-3d">
-    <article> 
-      <h2>Formação Academica</h2>
+         <div class="img-texto">
+            <img src="assets/_imagens/uninter-logo.png" alt="Logo da Uninter">
+            <p>Análise e desenvolvimento de sistemas</p>
+         </div>
+         <p class="ano-texto">ano: 2026</p>
 
-      <div class="img-texto">
-         <img src="assets/_imagens/uninter-logo.png" alt="Logo da Uninter">
-         <p>Analíse e desenvolvimento de sistemas</p>
+         <div class="image-side-right">
+            <h2>Cursos e Certificados</h2>
+            <div class="fundo-imagem">
+               <img src="assets/_imagens/graduado icon 2.png" alt="Graduado">
+            </div>
+            <div class="cursos-list-container">
+               <ul>
+                  <li *ngFor="let curso of cursos">{{ curso }}</li>
+               </ul>
+            </div>
+         </div>
+      </article>
+   </section>
+
+   <aside id="lateral" class="tech-image">
+      <h2 class="card-title">Tecnologias</h2>
+      <div class="background-content">
+         <div class="tablet-wrapper">
+            <img src="assets/_imagens/habilidade-tecnologias.webp" alt="Tablet tecnologias" class="tablet-img">
+
+            <div class="screen-area">
+               <app-tech-icons></app-tech-icons>
+            </div>
+         </div>
       </div>
-      <p style="text-align: right;font-size: 12px; margin: -10px; margin-right: 12px;">ano: 2026</p>
-            
-      <div class="image-side-right">
-         <h2>Cursos e Certificados</h2>
-         <div class="fundo-imagem"> 
-            <img src="assets/_imagens/graduado icon 2.png" alt="">
-        </div> 
-         <ul>
-               <li>Java Basico - Curso em video</li>
-               <li>Programação Orientada a Objeto - Udemy</li>
-               <li>Api Rest e Spring Boot - Udemy</li>
-               <li>MySQL - Udemy/Curso em video</li>
-               <li>HTML, CSS, JavaScript - Udemy/Dev Quest</li>
-               <li>Angular - Uninter(Academico)</li>
-               <li>Python - Uninter(Academico)</li>
-               <li>Operador de computador(pacote office) - Prepara cursos</li>
-               <li>Montagem e manuntenção de computadores - Prepara</li>
-               <li>inglês - Curso Beway/Senac</li>
-         </ul>   
-      </div>
-    
-   
-    </article>
- </section>
-
-    
- <aside id="lateral" class="card-3d tech-image">
-  <div class="tablet-wrapper">
-   <h2 class="card-title">Tecnologias</h2>
-    <img src="assets/_imagens/habilidade-tecnologias.webp" alt="Tablet tecnologias">
-
-    <div class="screen-area">
-      <app-tech-icons></app-tech-icons>
-    </div>
-  </div>
-</aside>
-
-   
- 
- <!-- utilizado para css-->
- <footer id="rodape">
- </footer>
-
+   </aside>
 </div>
