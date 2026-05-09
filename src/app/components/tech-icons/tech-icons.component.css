@@ -12,26 +12,21 @@
   align-items: center;
   z-index: 2;
   margin-top: -8%;
-  /* Restaurado o alinhamento óptico vertical */
 }
 
 .tech-container .icons {
   width: 62%;
-  /* Restaurado o tamanho perfeito para ficar entre as mãos */
   height: 60%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  /* Restaurado o gap original no desktop */
   justify-items: center;
   align-items: center;
 }
 
 .tech-container .icons img {
   width: 95%;
-  /* Restaurado a largura relativa sem max-width fixo */
   min-width: 0;
-  /* Garante que possam encolher em telas pequenas */
   height: auto;
   object-fit: contain;
   cursor: pointer;
@@ -48,8 +43,15 @@
 }
 
 @keyframes pulseIcon {
-  0% { transform: scale(1) translateY(0); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-  100% { transform: scale(1.05) translateY(-3px); filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4)); }
+  0% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+
+  100% {
+    transform: scale(1.05) translateY(-3px);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+  }
 }
 
 .tech-container .icons img:hover {
@@ -64,7 +66,6 @@
 
 .tech-modal {
   width: 72%;
-  /* Mesma largura dos ícones para o modal ficar no mesmo lugar */
   height: 60%;
   margin-left: 26px;
 
@@ -217,7 +218,6 @@
   }
 }
 
-/* Media Queries */
 @media (max-width: 1024px) {
   .tech-container .icons {
     gap: 15px;
@@ -229,18 +229,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     transform: scale(0.85);
-    /* Mantém o tamanho exato que você gostou */
     width: 70%;
-    /* Ajuste fino do container para caber no tablet */
     height: 65%;
   }
 
   .tech-container .icons img {
     max-width: 35px;
-    /* Ícones bem menores para não vazar a tela do tablet no mobile */
   }
 
-  /* Modal solto do tablet para leitura confortável no mobile */
   .tech-modal {
     position: fixed;
     top: 50%;
@@ -262,6 +258,7 @@
       opacity: 0;
       transform: translate(-50%, -45%) scale(0.9);
     }
+
     to {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1);
@@ -323,7 +320,6 @@
 
   .tech-container .icons img {
     max-width: 31px;
-    /* Redução drástica para não vazar no celular */
   }
 
   .tech-modal {
