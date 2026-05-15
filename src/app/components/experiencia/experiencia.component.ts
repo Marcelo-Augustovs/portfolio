@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { VideoContainerComponent } from "../video-container/videoContainer.component";
-import { ExperienciaService, Project } from '../../services/experiencia.service';
+import { ExperienciaService, Project, Experience } from '../../services/experiencia.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -29,10 +29,14 @@ export class ExperienciaComponent implements OnInit {
   projectList: Project[] = [];
   currentIndex = 0;
 
+  experienceList: Experience[] = [];
+  currentExpIndex = 0;
+
   constructor(private experienciaService: ExperienciaService) {}
 
   ngOnInit() {
     this.projectList = this.experienciaService.getProjects();
+    this.experienceList = this.experienciaService.getExperiences();
   }
 
   proximoProjeto() {
@@ -48,6 +52,22 @@ export class ExperienciaComponent implements OnInit {
       this.currentIndex--;
     } else {
       this.currentIndex = this.projectList.length - 1;
+    }
+  }
+
+  proximaExperiencia() {
+    if (this.currentExpIndex < this.experienceList.length - 1) {
+      this.currentExpIndex++;
+    } else {
+      this.currentExpIndex = 0;
+    }
+  }
+
+  experienciaAnterior() {
+    if (this.currentExpIndex > 0) {
+      this.currentExpIndex--;
+    } else {
+      this.currentExpIndex = this.experienceList.length - 1;
     }
   }
 }

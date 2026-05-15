@@ -1,50 +1,49 @@
 <div class="experiencia-wrapper">
-    
+
     <section id="corpo">
         <h2>Projetos</h2>
         <article *ngIf="projectList.length > 0">
-            <app-videoContainer
-                [projectName]="projectList[currentIndex].name"
+            <app-videoContainer [projectName]="projectList[currentIndex].name"
                 [techUsed]="projectList[currentIndex].techs"
                 [projectDescription]="projectList[currentIndex].description"
-                [preview]="projectList[currentIndex].previewLink"
-                [github]="projectList[currentIndex].githubLink"
-                (next)="proximoProjeto()"
-                (previous)="projetoAnterior()"
-            ></app-videoContainer>
+                [preview]="projectList[currentIndex].previewLink" [github]="projectList[currentIndex].githubLink"
+                (next)="proximoProjeto()" (previous)="projetoAnterior()"></app-videoContainer>
         </article>
     </section>
 
     <!-- lado direito do conteudo/experiencias-->
-     <aside id="lateral">
+    <aside id="lateral">
         <h1 class="titulo-experiencia">Experiências</h1>
 
-        <div class="exp-card">
+        <div class="exp-card" *ngIf="experienceList.length > 0">
 
             <div class="exp-header">
-                <img src="assets/_imagens/FAB.jpg" alt="Logo FAB">
+                <img [src]="experienceList[currentExpIndex].companyLogo"
+                    [alt]="'Logo ' + experienceList[currentExpIndex].companyName">
 
                 <div class="exp-title">
-                    <h3>Força Aérea Brasileira</h3>
-                    <h4>Setor Administrativo • EFM/GSD-GL</h4>
-                    <span class="exp-periodo">Duração: 2018 — 2022 • 4 anos</span>
+                    <h3>{{ experienceList[currentExpIndex].companyName }}</h3>
+                    <h4>{{ experienceList[currentExpIndex].role }}</h4>
+                    <span class="exp-periodo">{{ experienceList[currentExpIndex].period }}</span>
                 </div>
             </div>
 
             <p class="exp-desc">
-            Responsável pela área administrativa do setor de recrutamento,
-            apoiando processos internos e gestão de militares.
+                {{ experienceList[currentExpIndex].description }}
             </p>
 
             <ul class="exp-list">
-                <li>Gestão administrativa de 250–350 militares por semestre</li>
-                <li>Processo de iniciação de novos militares</li>
-                <li>Controle de dados pessoais, auxílios, transgressões e escalas</li>
-                <li>Apoio em instruções militares e regulamentos</li>
-                <li>Registro médico de novos militares</li>
-                <li>Controle de entrada/saída de materiais e ordens de missão</li>
+                <li *ngFor="let task of experienceList[currentExpIndex].tasks">{{ task }}</li>
             </ul>
 
+            <div class="nav-buttons">
+                <button mat-icon-button color="primary" (click)="experienciaAnterior()">
+                    <mat-icon>arrow_back_ios</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" (click)="proximaExperiencia()">
+                    <mat-icon>arrow_forward_ios</mat-icon>
+                </button>
+            </div>
         </div>
     </aside>
 

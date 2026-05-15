@@ -32,13 +32,18 @@
 }
 
 h2 {
-  background-color: #C0D4D8;
-  font-size: 17pt;
+  background: linear-gradient(to bottom, #d8e8eb, #aabdc0);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 3px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #99aab0;
+  border-radius: 4px;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   padding: 10px;
   margin-top: 10px;
-  color: #3B6064;
-  font-style: italic; 
+  margin-bottom: 15px;
+  color: #2b484b;
+  font-style: italic;
   font-family: 'Titillium Web', sans-serif;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
 }
 
 /* Lado das experiencias */
@@ -49,101 +54,158 @@ h2 {
 }
 
 .titulo-experiencia {
-  font-family: 'Titillium Web', sans-serif;
-  background: #e9ecef;
-  color:#CC9600;
-  font-size: 20pt;
+  background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 3px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   padding: 10px;
-  border-radius: 8px;
+  margin-top: 10px;
   margin-bottom: 15px;
-  width: 100%;
+  color: #CC9600;
+  font-style: italic;
+  font-family: 'Titillium Web', sans-serif;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
   text-align: center;
 }
 
 .exp-card {
-  background-color: white; 
-  border-radius: 10px; 
-  padding: 20px; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
-  width: 90%; 
-  max-width: 500px; 
-  margin-bottom: 20px; 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  height: 520px;
+  /* Altura fixa para manter o tamanho consistente */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .exp-card:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .exp-header {
-  display: flex; 
-  align-items: center; 
-  margin-bottom: 15px; 
-  border-bottom: 2px solid #eaeaea; 
-  padding-bottom: 10px; 
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
 }
 
 .exp-header img {
-  width: 60px; 
-  height: 60px;
-  border-radius: 50%; 
-  object-fit: cover; 
-  margin-right: 15px; 
-  border: 2px solid #ccc; 
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 18px;
+  border: 3px solid #f5f5f5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .exp-title {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .exp-title h3 {
   margin: 0;
-  font-size: 1.4rem;
-  color: #2c3e50; 
-  font-family: 'Arial', sans-serif; 
+  font-size: 1.3rem;
+  color: #1a252f;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
 }
 
 .exp-title h4 {
-  margin: 5px 0 0;
-  font-size: 1rem;
-  color: #7f8c8d; 
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  color: #3498db;
+  font-weight: 600;
   font-family: 'Arial', sans-serif;
 }
 
 .exp-periodo {
-  font-size: 0.85rem;
-  color: #95a5a6; 
+  font-size: 0.8rem;
+  color: #7f8c8d;
   margin-top: 5px;
+  font-weight: 500;
 }
 
 .exp-desc {
-  font-size: 1rem;
-  color: #34495e; 
-  line-height: 1.6; 
-  margin-bottom: 20px; 
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  /* Se não houver descrição, evita que ocupe espaço desnecessário */
+  min-height: min-content;
 }
 
 .exp-list {
-  list-style-type: none; 
-  padding: 0; 
-  margin: 0; 
+  list-style-type: none;
+  padding: 0 10px 0 0;
+  /* Padding direito para o scrollbar não colar no texto */
+  margin: 0 0 15px 0;
+  flex: 1;
+  /* Faz a lista ocupar o espaço restante */
+  overflow-y: auto;
+  /* Adiciona scroll vertical se necessário */
+}
+
+/* Customização do scrollbar para a lista de tarefas */
+.exp-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.exp-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.exp-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.exp-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 .exp-list li {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #555;
-  margin-bottom: 8px; 
-  padding-left: 20px; 
-  position: relative; 
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.4;
 }
 
 .exp-list li::before {
-  content: "•"; 
-  color: #CC9600; 
-  font-size: 1.5rem; 
-  position: absolute; 
-  left: 0; 
-  top: -5px; 
+  content: "•";
+  color: #3498db;
+  /* Alterado para combinar com a cor do cargo */
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -5px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  /* Empurra os botões para a parte inferior do card */
+  border-top: 2px solid #f0f0f0;
+  padding-top: 15px;
+}
+
+.nav-buttons button {
+  transition: all 0.2s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+  color: #3498db;
 }
