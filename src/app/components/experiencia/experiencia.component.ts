@@ -32,7 +32,7 @@ export class ExperienciaComponent implements OnInit {
   experienceList: Experience[] = [];
   currentExpIndex = 0;
 
-  constructor(private experienciaService: ExperienciaService) {}
+  constructor(private experienciaService: ExperienciaService) { }
 
   ngOnInit() {
     this.projectList = this.experienciaService.getProjects();
