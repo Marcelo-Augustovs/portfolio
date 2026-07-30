@@ -1,15 +1,571 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+
 <head>
-  <meta charset="utf-8">
-  <title>Portfólio Marcelo Augusto</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcelo Augusto | Desenvolvedor e Analista de Sistemas</title>
+  <meta name="description"
+    content="Portfólio profissional de Marcelo Augusto - Desenvolvedor e Analista de Sistemas com experiência em Java, Spring Boot, Angular, React, Next.js e NestJS.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            principal: '#0b0f14',
+            cardBg: '#141921',
+            textoSuave: '#a39c8e',
+            brand: {
+              selecao: 'var(--brand-selecao)',
+              suave: 'var(--brand-suave)',
+              suaveBorda: 'var(--brand-suave-borda)',
+              suaveTexto: 'var(--brand-suave-texto)',
+              destaque: 'var(--brand-destaque)',
+              destaqueHover: 'var(--brand-destaque-hover)',
+              dourado: 'var(--brand-dourado)',
+
+              darkDestaque: 'var(--brand-dark-destaque)',
+              darkDestaqueHover: 'var(--brand-dark-destaque-hover)',
+              darkSuaveBg: 'var(--brand-dark-suave-bg)',
+              darkSuaveBorda: 'var(--brand-dark-suave-borda)',
+              darkDourado: 'var(--brand-dark-dourado)',
+            },
+            slate: {
+              50: '#faf8f5', 100: '#f3efe9', 200: '#e5ded4', 300: '#d4cdc3',
+              400: '#b5ac9f', 500: '#7a6e61', 600: '#4a3f35', 700: '#2a2f33',
+              800: '#1c2126', 900: '#141921', 950: '#0b0f14'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-selecao: #ebdcd0;
+      --brand-suave: #faf8f5;
+      --brand-suave-borda: #e5ded4;
+      --brand-suave-texto: #734a26;
+      --brand-destaque: #734a26;
+      --brand-destaque-hover: #54351a;
+      --brand-dourado: #c5a059;
+      --brand-dark-destaque: #e2b659;
+      --brand-dark-destaque-hover: #f0d28e;
+      --brand-dark-suave-bg: rgba(226, 182, 89, 0.08);
+      --brand-dark-suave-borda: rgba(226, 182, 89, 0.18);
+      --brand-dark-dourado: #f59e0b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .dark .card-glow {
+      box-shadow: 0 0 0 1px rgba(226, 182, 89, 0.06), 0 1px 20px -4px rgba(10, 14, 20, 0.6);
+    }
+
+    .dark .section-alt {
+      background: linear-gradient(180deg, rgba(20, 25, 33, 0.6) 0%, rgba(11, 15, 20, 0.4) 100%);
+    }
+  </style>
 </head>
-<body class="mat-typography">
-  <app-root></app-root>
+
+<body
+  class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-brand-selecao selection:text-brand-suaveTexto min-h-screen flex flex-col justify-between transition-colors duration-300">
+
+  <!-- Navegação -->
+  <nav
+    class="fixed top-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 z-50 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#inicio"
+          class="text-xl font-bold tracking-tight text-slate-900 dark:text-white hover:text-brand-destaque dark:hover:text-brand-darkDestaque transition-colors">
+          Dev<span class="text-brand-destaque dark:text-brand-darkDestaque">.</span>Marcelo<span
+            class="text-brand-destaque dark:text-brand-darkDestaque">-</span>Augusto
+        </a>
+        <div class="flex items-center space-x-4">
+          <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="#sobre"
+              class="text-slate-600 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-brand-darkDestaque transition-colors">Sobre</a>
+            <a href="#habilidades"
+              class="text-slate-600 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-brand-darkDestaque transition-colors">Competências</a>
+            <a href="#experiencia"
+              class="text-slate-600 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-brand-darkDestaque transition-colors">Experiência</a>
+            <a href="#projetos"
+              class="text-slate-600 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-brand-darkDestaque transition-colors">Projetos</a>
+            <a href="#contato"
+              class="text-slate-600 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-brand-darkDestaque transition-colors">Contato</a>
+          </div>
+          <button id="botaoTema" aria-label="Alternar Tema"
+            class="p-2 text-slate-600 dark:text-slate-400 hover:text-brand-destaque dark:hover:text-brand-darkDestaque focus:outline-none transition-colors">
+            <i id="iconeTema" class="fa-solid fa-sun text-xl"></i>
+          </button>
+          <div class="md:hidden">
+            <button id="botaoMenu" aria-label="Abrir Menu"
+              class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+              <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Menu Mobile -->
+    <div id="menuMobile"
+      class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4 space-y-2">
+      <a href="#sobre"
+        class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-brand-darkDestaque">Sobre</a>
+      <a href="#habilidades"
+        class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-brand-darkDestaque">Competências</a>
+      <a href="#experiencia"
+        class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-brand-darkDestaque">Experiência</a>
+      <a href="#projetos"
+        class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-brand-darkDestaque">Projetos</a>
+      <a href="#contato"
+        class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-brand-darkDestaque">Contato</a>
+    </div>
+  </nav>
+
+  <main class="flex-grow pt-16">
+    <!-- Hero Section -->
+    <section id="inicio" class="py-20 md:py-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="flex-1 space-y-6 text-center md:text-left">
+          <div
+            class="inline-block px-3 py-1 bg-brand-suave dark:bg-brand-darkSuaveBg border border-brand-suaveBorda dark:border-brand-darkSuaveBorda rounded-full text-brand-suaveTexto dark:text-brand-darkDestaque text-sm font-medium">
+            Desenvolvedor e Analista de Sistemas
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Marcelo Augusto <br class="hidden sm:inline" /><span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-brand-destaque to-brand-dourado dark:from-brand-darkDestaque dark:to-brand-darkDourado">Vieira
+              Silva</span>
+          </h1>
+          <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl mx-auto md:mx-0 leading-relaxed">
+            Desenvolvedor com experiência no desenvolvimento de aplicações web e APIs REST utilizando Java, Spring Boot,
+            Angular, React, Next.js e bancos de dados SQL. Focado em integração de sistemas, autenticação JWT e boas
+            práticas de arquitetura.
+          </p>
+          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+            <a href="#projetos"
+              class="px-6 py-3 bg-brand-destaque hover:bg-brand-destaqueHover text-white font-medium rounded-lg shadow-lg shadow-brand-destaque/20 transition-all">
+              Ver Projetos
+            </a>
+            <a href="#contato"
+              class="px-6 py-3 border border-slate-300 dark:border-slate-700 hover:border-brand-destaque text-slate-700 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-white font-medium rounded-lg transition-all">
+              Fazer Contato
+            </a>
+          </div>
+          <div
+            class="flex items-center justify-center md:justify-start space-x-6 pt-4 text-slate-600 dark:text-slate-400">
+            <a href="https://github.com/marcelo-augustovs" target="_blank" rel="noopener noreferrer"
+              class="hover:text-brand-destaque dark:hover:text-brand-darkDestaque text-2xl transition-colors"
+              aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/devmarceloaugusto" target="_blank" rel="noopener noreferrer"
+              class="hover:text-brand-destaque dark:hover:text-brand-darkDestaque text-2xl transition-colors"
+              aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:marcelo.augustovs99@gmail.com"
+              class="hover:text-brand-destaque dark:hover:text-brand-darkDestaque text-2xl transition-colors"
+              aria-label="E-mail">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Mim / Resumo -->
+    <section id="sobre"
+      class="py-16 bg-slate-100/70 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800/80 transition-colors duration-300 section-alt">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+          <i class="fa-solid fa-user-gear text-brand-destaque dark:text-brand-darkDestaque"></i> Sobre Mim
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="md:col-span-2 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm card-glow">
+            <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Resumo Profissional</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              Desenvolvedor e Analista de Sistemas Jr com vivência em desenvolvimento full stack, manutenção de
+              aplicações web, criação de APIs REST robustas e integração de sistemas. Possuo conhecimentos consolidados
+              em versionamento com Git, autenticação JWT e organização de processos administrativos.
+            </p>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              Perfil proativo, organizado, com forte capacidade de aprendizado contínuo e excelente facilidade para
+              trabalho em equipe.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm card-glow">
+            <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Formação Acadêmica</h3>
+            <div class="border-l-2 border-brand-destaque dark:border-brand-darkDestaque pl-4 space-y-1">
+              <p class="font-medium text-slate-800 dark:text-slate-200">Análise e Desenvolvimento de Sistemas</p>
+              <p class="text-sm text-brand-destaque dark:text-brand-darkDestaque">Uninter</p>
+              <p class="text-xs text-slate-500 dark:text-slate-500">Cursando | Conclusão prevista: 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades Técnicas -->
+    <section id="habilidades" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+        <i class="fa-solid fa-code text-brand-destaque dark:text-brand-darkDestaque"></i> Habilidades Técnicas
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Frontend -->
+        <div
+          class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fa-solid fa-desktop text-brand-destaque dark:text-brand-darkDestaque text-xl"></i>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Frontend</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">React</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Angular</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Next.js</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">TypeScript</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">JavaScript</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">HTML5
+              / CSS3</span>
+          </div>
+        </div>
+        <!-- Backend -->
+        <div
+          class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fa-solid fa-server text-brand-destaque dark:text-brand-darkDestaque text-xl"></i>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Backend</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Java</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Spring
+              Boot</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Node.js</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">NestJS</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Express</span>
+          </div>
+        </div>
+        <!-- Banco de Dados -->
+        <div
+          class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fa-solid fa-database text-brand-destaque dark:text-brand-darkDestaque text-xl"></i>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Banco de Dados</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">MySQL</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">SQL
+              Server</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">H2
+              Database</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">JPA
+              / Hibernate</span>
+          </div>
+        </div>
+        <!-- Arquitetura & Boas Práticas -->
+        <div
+          class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fa-solid fa-layer-group text-brand-destaque dark:text-brand-darkDestaque text-xl"></i>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Arquitetura & Design</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">MVC</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">DDD</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Injeção
+              de Dependência</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Princípios
+              SOLID</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Clean
+              Code</span>
+          </div>
+        </div>
+        <!-- Cloud & Ferramentas -->
+        <div
+          class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fa-solid fa-wrench text-brand-destaque dark:text-brand-darkDestaque text-xl"></i>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Cloud & Ferramentas</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Git
+              / GitHub</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Azure</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">Azure
+              DevOps</span>
+            <span
+              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm rounded-md border border-slate-200 dark:border-slate-700">JUnit
+              (Testes)</span>
+          </div>
+        </div>
+        <!-- Idiomas -->
+        <div
+          class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fa-solid fa-language text-brand-destaque dark:text-brand-darkDestaque text-xl"></i>
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Idiomas</h3>
+          </div>
+          <div class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <div class="flex justify-between items-center">
+              <span>Português</span>
+              <span class="text-brand-destaque dark:text-brand-darkDestaque font-medium">Nativo</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span>Inglês</span>
+              <span class="text-brand-destaque dark:text-brand-darkDestaque font-medium">Técnico</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiência Profissional -->
+    <section id="experiencia"
+      class="py-16 bg-slate-100/70 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+          <i class="fa-solid fa-briefcase text-brand-destaque dark:text-brand-darkDestaque"></i> Experiência
+          Profissional
+        </h2>
+        <div class="space-y-8">
+          <!-- GCrevelario Tech -->
+          <div
+            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm dark:shadow-none">
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Desenvolvedor Full Stack Jr</h3>
+                <p class="text-brand-destaque dark:text-brand-darkDestaque font-medium">GCrevelario Tech —
+                  Desenvolvimento de
+                  Sistemas Web</p>
+              </div>
+              <span
+                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-semibold rounded-full w-fit border border-slate-200 dark:border-slate-700">
+                Mar/2026 – Mai/2026
+              </span>
+            </div>
+            <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2 text-sm leading-relaxed">
+              <li>Desenvolvimento e manutenção de aplicações web utilizando Next.js, NestJS e TypeScript.</li>
+              <li>Implementação de funcionalidades frontend e backend com integração de APIs REST e banco SQL Server.
+              </li>
+              <li>Criação de interfaces administrativas responsivas e componentes reutilizáveis.</li>
+              <li>Utilização de Git com fluxo de branches, pull requests e revisão de código com desenvolvedor sênior.
+              </li>
+              <li>Manutenção evolutiva e correção de bugs em módulos de autenticação, permissões e controle de acessos.
+              </li>
+              <li>Apoio às rotinas operacionais, logística de marketplace e organização de dados comerciais.</li>
+            </ul>
+          </div>
+
+          <!-- Projetos de Desenvolvimento de Software -->
+          <div
+            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm dark:shadow-none">
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Desenvolvedor de Software</h3>
+                <p class="text-brand-destaque dark:text-brand-darkDestaque font-medium">Projetos Autônomos & Acadêmicos
+                </p>
+              </div>
+              <span
+                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-semibold rounded-full w-fit border border-slate-200 dark:border-slate-700">
+                Mar/2023 – Out/2024
+              </span>
+            </div>
+            <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2 text-sm leading-relaxed">
+              <li>Desenvolvimento de aplicações web e desktop voltadas para gerenciamento de dados e automação de
+                processos.</li>
+              <li>Criação de APIs REST robustas utilizando Java, Spring Boot e bancos de dados relacionais (MySQL, H2).
+              </li>
+              <li>Implementação de operações CRUD, autenticação com Spring Security e controle de acesso RBAC.</li>
+              <li>Desenvolvimento de interfaces com Angular e JavaFX, aplicando arquitetura em camadas e princípios
+                SOLID.</li>
+            </ul>
+          </div>
+
+          <!-- Rogerlane Fashion -->
+          <div
+            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm dark:shadow-none">
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Área Administrativa / Operacional</h3>
+                <p class="text-brand-destaque dark:text-brand-darkDestaque font-medium">Rogerlane Fashion</p>
+              </div>
+              <span
+                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-semibold rounded-full w-fit border border-slate-200 dark:border-slate-700">
+                Set/2022 – Abr/2023
+              </span>
+            </div>
+            <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2 text-sm leading-relaxed">
+              <li>Apoio em rotinas administrativas, financeiras, acompanhamento de custos, despesas e lucros.</li>
+              <li>Controle e conferência física de estoque, acompanhando movimentações de produtos e materiais.</li>
+            </ul>
+          </div>
+
+          <!-- Força Aérea Brasileira -->
+          <div
+            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm dark:shadow-none">
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Área Administrativa</h3>
+                <p class="text-brand-destaque dark:text-brand-darkDestaque font-medium">Força Aérea Brasileira</p>
+              </div>
+              <span
+                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-semibold rounded-full w-fit border border-slate-200 dark:border-slate-700">
+                Ago/2018 – Ago/2022
+              </span>
+            </div>
+            <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2 text-sm leading-relaxed">
+              <li>Gestão administrativa de contingente entre 250 e 350 militares por semestre em dois setores distintos.
+              </li>
+              <li>Controle de dados pessoais, cadastros médicos, escalas de serviço, expedição de ordens de missão e
+                materiais.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos de Destaque -->
+    <section id="projetos" class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+        <i class="fa-solid fa-diagram-project text-brand-destaque dark:text-brand-darkDestaque"></i> Projetos de
+        Destaque
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- MaNotes -->
+        <div
+          class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col justify-between p-6 shadow-sm dark:shadow-none">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span
+                class="text-xs font-semibold text-brand-suaveTexto dark:text-brand-darkDestaque bg-brand-suave dark:bg-brand-darkSuaveBg border border-brand-suaveBorda dark:border-brand-darkSuaveBorda px-2.5 py-1 rounded">
+                Full Stack Application
+              </span>
+              <span class="text-xs text-slate-500">Out/2024 – Jul/2025</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">MaNotes</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Aplicação completa para gerenciamento de anotações, controle de despesas, lembretes e agendamentos.
+            </p>
+            <div class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+              <p><strong class="text-slate-800 dark:text-slate-200">Frontend:</strong> Angular, SPA (Single Page
+                Application), Angular Material.</p>
+              <p><strong class="text-slate-800 dark:text-slate-200">Backend:</strong> Java, Spring Boot, Spring
+                Security, JWT.</p>
+              <p><strong class="text-slate-800 dark:text-slate-200">Banco & Testes:</strong> MySQL, Spring Data JPA, H2
+                e testes unitários com JUnit.</p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between mt-6">
+            <a href="https://github.com/marcelo-augustovs" target="_blank" rel="noopener noreferrer"
+              class="text-sm font-medium text-brand-destaque dark:text-brand-darkDestaque hover:text-brand-destaqueHover dark:hover:text-brand-darkDestaqueHover flex items-center gap-2">
+              <i class="fa-brands fa-github"></i> Ver Código no GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato"
+      class="py-16 bg-slate-100/70 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Vamos Conversar?</h2>
+        <p class="text-slate-600 dark:text-slate-400 max-w-xl mx-auto text-sm sm:text-base">
+          Estou disponível para novas oportunidades profissionais e colaborações em projetos de desenvolvimento.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+          <a href="mailto:marcelo.augustovs99@gmail.com"
+            class="px-6 py-3 bg-brand-destaque hover:bg-brand-destaqueHover text-white font-medium rounded-lg shadow-lg shadow-brand-destaque/20 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-envelope"></i> Enviar E-mail
+          </a>
+          <a href="https://linkedin.com/in/devmarceloaugusto" target="_blank" rel="noopener noreferrer"
+            class="px-6 py-3 border border-slate-300 dark:border-slate-700 hover:border-brand-destaque text-slate-700 dark:text-slate-300 hover:text-brand-destaque dark:hover:text-white font-medium rounded-lg transition-all flex items-center gap-2">
+            <i class="fa-brands fa-linkedin"></i> Perfil no LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer
+    class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-6 text-center text-xs text-slate-500 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4">
+      <p>&copy; 2026 Marcelo Augusto Vieira Silva. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const botaoMenu = document.getElementById('botaoMenu');
+      const menuMobile = document.getElementById('menuMobile');
+      const botaoTema = document.getElementById('botaoTema');
+      const iconeTema = document.getElementById('iconeTema');
+      const elementoHtml = document.documentElement;
+
+      if (botaoMenu && menuMobile) {
+        botaoMenu.addEventListener('click', () => {
+          menuMobile.classList.toggle('hidden');
+        });
+
+        menuMobile.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            menuMobile.classList.add('hidden');
+          });
+        });
+      }
+
+      if (botaoTema && iconeTema) {
+        botaoTema.addEventListener('click', () => {
+          elementoHtml.classList.toggle('dark');
+          if (elementoHtml.classList.contains('dark')) {
+            iconeTema.classList.remove('fa-moon');
+            iconeTema.classList.add('fa-sun');
+          } else {
+            iconeTema.classList.remove('fa-sun');
+            iconeTema.classList.add('fa-moon');
+          }
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>
